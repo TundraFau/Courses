@@ -3,9 +3,16 @@ import '../styles/drumpad.css'
 export function DrumPad({name, source, trigger, setClip}){
     
 
-    function handleSoundOnClick(){
+    function handleClick(){
         playSound();
         setClip(name);
+        changeColor();
+    }
+
+    function changeColor(){
+        const pressedPad = document.querySelector(`[trigger='${trigger}']`);
+        pressedPad.style.backgroundColor = 'orange';
+        setTimeout(() => {pressedPad.style.backgroundColor = 'grey'}, 100);
     }
 
     function playSound(){
@@ -16,7 +23,7 @@ export function DrumPad({name, source, trigger, setClip}){
 
     
     return(
-        <div className="drum_pad" id={name} trigger={trigger} onClick={handleSoundOnClick}>
+        <div className="drum_pad" id={name} trigger={trigger} onClick={handleClick}>
             
             {trigger}
             <audio src={source} id={trigger}></audio>

@@ -8,12 +8,19 @@
 
 #drum_machine{
     border: 1px solid yellow;
-    background-color: grey;
-    width: 30%;
-    height: 30%;
+    background-color: #b3b3b3;
+    display: flex;
+    
 }
 
 #display {
-    display: flex;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    /* height: 270px;
+    width:  380px; */
+    
     
 }

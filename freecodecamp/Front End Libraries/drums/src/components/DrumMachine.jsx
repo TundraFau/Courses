@@ -13,7 +13,10 @@ export function DrumMachine(){
         if(handleSoundOnKeyDown(key)){
             const pressedPad = document.querySelector(`[trigger="${key}"]`)
             setClip(pressedPad.attributes.id.value)
-        }
+            pressedPad.style.backgroundColor = 'orange';
+
+            setTimeout(() => {pressedPad.style.backgroundColor = 'grey'}, 100);
+    }
         
     }
     function handleSoundOnKeyDown(key){
@@ -30,8 +33,8 @@ export function DrumMachine(){
 
     return (
     <div id='drum_machine'>
-        <div id="display">
             <h1>{clip}</h1>   
+        <div id="display">
             <DrumPad name='Heater-1' source='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3' trigger='Q'  setClip={setClip} />
             <DrumPad name='Heater-2' source='https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3' trigger='W'  setClip={setClip} />
             <DrumPad name='Heater-3' source='https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3' trigger='E'  setClip={setClip} />
