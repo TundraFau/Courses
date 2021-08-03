@@ -1,0 +1,14 @@
+#root{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#drum_machine{
+    border: 1px solid yellow;
+    background-color: grey;
+    width: 30%;
+    height: 30%;
+}
